@@ -40,6 +40,17 @@ export default function Header() {
           </li>
           <li>
             <NavLink
+              to="/Posts"
+              style={({ isActive }) =>
+                isActive ? { backgroundColor: "green" } : {}
+              }
+              className="bg-red-500 px-4 py-2"
+            >
+            Posts
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/service"
               style={({ isActive }) =>
                 isActive ? { backgroundColor: "green" } : {}
@@ -47,8 +58,9 @@ export default function Header() {
               className="bg-red-500 px-4 py-2"
             >
               Service
-            </NavLink> 
-
+            </NavLink>
+          </li>
+          <li>
             <NavLink
               to="/Users"
               style={({ isActive }) =>
