@@ -1,7 +1,11 @@
-import { Link, useLoaderData } from "react-router-dom";
-
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 export default function PostDetails() {
   const post = useLoaderData();
+  const navigate = useNavigate();
+  const handleGoBack = () => {
+    navigate(-1);
+  };
+
   const { id, body, title } = post;
   return (
     <div className="flex flex-col py-5 text-center ">
@@ -11,6 +15,7 @@ export default function PostDetails() {
       <Link to={`post/${id}`}>
         <button>Show Details</button>
       </Link>
+      <button className="btn" onClick={handleGoBack}>Go Back</button>
     </div>
   );
 }
